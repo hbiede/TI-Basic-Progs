@@ -1,0 +1,30 @@
+a+bi
+ClrHome
+Disp "RADICAND"
+Prompt R
+1→Y
+2→T
+1→U
+While (T²≤abs(R))
+While not(fPart(R/T²))
+R/T²→R
+YT→Y
+End
+T+1→T
+End
+ClrHome
+U+1+int(log(Y))→U
+If Y≠1
+Output(1,1,Y)
+U-(U=1)→U
+If R<0
+Then
+Output(1,U,"i")
+U+1→U
+End
+If 1≠abs(R)
+Then
+Output(1,U,"√(")
+Output(1,1+U,abs(R))
+U+2→U
+End

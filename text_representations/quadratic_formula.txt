@@ -1,0 +1,237 @@
+
+"IF THIS CAN DISPLAY COLOR, SET V TO 27. ELSE, 16"
+27→V
+
+
+a+bi
+ClrHome
+0→I
+Disp "AX²+BX+C=0"
+If real(W)≠1
+Prompt A,B,C
+(B²-4AC)→D
+If D<0
+Then
+1→I
+­D→D
+End
+{(­B+√(D))/(2A),(­B-√(D))/(2A)}→L₁
+If A=0
+Then
+ClrHome
+Disp "A≠0"
+Stop
+End
+1→Y
+2→T
+1→U
+0→K
+1→S
+If real(fPart(A))≠0 or real(fPart(B))≠0 or real(fPart(C))≠0
+Then
+1→L
+While real(L)≤1000
+If real(fPart(LA))=0 and real(fPart(LB))=0 and real(fPart(LC))=0
+Then
+LC→C
+LB→B
+LA→A
+L*1000→L
+End
+1+L→L
+End
+End
+If real(fPart(A))≠0 or real(fPart(B))≠0 or real(fPart(C))≠0
+Then
+ClrHome
+Disp "MAKE WHOLE"
+Disp "NUMBERS TO GET"
+Disp "GUARANTEED EXACT"
+Disp "ANSWERS"
+Disp ""
+
+Disp "PRESS ENTER TO"
+Disp "CONTINUE"
+Pause 
+ClrHome
+1→K
+End
+ClrHome
+(B²-4AC)→D
+If real(abs(D))=1 or real(D)=0
+1→K
+If real(D)<real(­D)
+Then
+1→I
+­D→D
+End
+­B+√(D)→P
+­B-√(D)→Q
+2A→Z
+Lbl 1
+If real(K)=1 and I≠1
+Then
+If real(abs(P))<real(abs(Q))
+Then
+Disp (P/Z)->Frac
+Disp (Q/Z)->Frac
+Else
+Disp (Q/Z)->Frac
+If real(abs(P))>real(abs(Q)) or real(P)=real(­Q)
+Then
+Disp (P/Z)->Frac
+Else
+Disp ""
+Output(2,V-2,"DR")
+End
+If real(W)=1 and real(F)≠0
+Then
+S+1→S
+Disp F
+0→W
+Output(3,1,"X=")
+End
+End
+Output(1,1,"X=")
+If real(I)=1
+Output(1,3,"i*")
+S+2→S
+End
+If real(K)≠1 or I=1
+Then
+If real(Z)<0
+Then
+­Z→Z
+­B→B
+End
+While real(T²)≤real(D)
+If real(T)=100
+Then
+ClrHome
+Disp "LARGE NUMBER"
+Disp "PROCESSING..."
+End
+While real(fPart(D/T²))=0
+D/T²→D
+YT→Y
+End
+T+1→T
+End
+ClrHome
+If real(abs(D))=1 and I≠1
+Then
+1→K
+Goto 1
+End
+ClrHome
+If real(1+int(log(abs(D))))≥V-1
+Then
+Disp "TOO BIG"
+Stop
+End
+If real(Y)≠1 or real(D)≠1
+Then
+gcd(abs(B),abs(Z)→G
+If real(G)≠1
+Then
+gcd(G,Y)→H
+If real(H)≠1
+Then
+Z/H→Z
+Y/H→Y
+B/H→B
+End
+Else
+If real(B)=0
+Then
+gcd(Y,Z)→H
+Y/H→Y
+Z/H→Z
+Else
+gcd(abs(B),Z)→H
+B/H→B
+Z/H→Z
+End
+End
+End
+Disp ""
+If real(W)=1 and real(F)≠0
+Then
+Output(S,1,"FACTOR 1:")
+Output(S,11,F)
+S+1→S
+0→W
+End
+If real(B)≠0
+Then
+Output(S,U,­B)
+If real(B)>0
+U+1→U
+U+1+int(log(abs(B)))→U
+End
+Output(S,U,"+/-"
+U+3→U
+If real(Y)≠1
+Then
+Output(S,U,Y)
+U+1+int(log(Y))→U
+End
+If real(I)=1
+Then
+Output(S,U,"i")
+U+1→U
+End
+If 1≠real(D)
+Then
+Output(S,U,"√(")
+U+2→U
+If real(U+1+int(log(abs(D))))>V
+Then
+S+1→S
+U→O
+V→U
+Output(S,(V-1)-(int(log(abs(D)))),D)
+Output(S+1,V,")"
+Else
+Output(S,U,abs(D))
+U+1+int(log(abs(D)))→U
+If real(U)≤V-1
+Then
+Output(S,U,")")
+End
+End
+End
+If real(abs(Z))≠1
+Then
+Disp ""
+Disp ""
+If real(Z)≠0
+Disp ""
+1→M
+While (real(M)≤real(U)) and real(M)≤V
+Output(S+1,M,"-")
+M+1→M
+End
+If real(fPart(M/2))≠0
+M-1→M
+Output(S+2,M/2,Z)
+S+3→S
+End
+0→W
+If Z≠1 or I≠1
+Then
+If ((round(­B/Z,2)≠­B/Z or round(Y√(D)/Z,2)≠Y√(D)/Z) and I=1) or ((round(L₁(1),6)≠L₁(1) or round(L₁(1),6)≠L₁(1)) and I≠1)
+Then
+Disp "APPROX"
+Else
+Disp "EXACT"
+End
+If I=1
+Then
+toString(round(­B/Z,2))+"+/-"+toString(round(Y√(D)/Z,2))+"i"→Str1
+Output(S+1,V-length(Str1),Str1)
+Else
+Disp round(L₁(1),6)
+Disp round(L₁(2),6)
+End
+End

@@ -1,0 +1,55 @@
+List->matr({31,28,31,30,31,30,31,31,30,31,30,31},[A])
+ClrHome
+Disp "MONTH"
+Prompt M
+Disp "DAY"
+Prompt D
+Disp "YEAR"
+Prompt Y
+Disp "LENGTH IN DAYS"
+Prompt L
+ClrHome
+If Y<100
+Y+2000→Y
+If M>12 or D>[A](M,1) or M≤0 or D≤0 or L<0
+Then
+Disp "INVALID DATE"
+Stop
+End
+Disp "PROCESSING"
+If L≠0
+L+1→L
+While L>0
+0→J
+If (remainder(Y,400)=0 or (remainder(Y,100)≠0 and remainder(Y,4)=0))
+1→J
+[A](M,1)→N
+If M=2 and J=1
+29→N
+If L>(N-D)
+Then
+L-(N-D+1)→L
+M+1→M
+1→D
+Else
+(L+D)-1→D
+0→L
+End
+If M=13
+Then
+1→M
+Y+1→Y
+End
+End
+ClrHome
+Output(1,1,M)
+2→U
+If M>9
+3→U
+Output(1,U,"/")
+Output(1,1+U,D)
+U+2→U
+If D>9
+U+1→U
+Output(1,U,"/")
+Output(1,U+1,Y)

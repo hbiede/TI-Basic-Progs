@@ -1,0 +1,19 @@
+ClrHome
+Disp "PRINCIPLE"
+Prompt P
+ClrHome
+Disp "INT"
+Prompt R
+ClrHome
+If R≥1
+R/100→R
+Disp "CMPD PER YEAR"
+Prompt N
+ClrHome
+Disp "YEARS"
+Prompt T
+ClrHome
+Disp "INTEREST"
+100*P(1+(R/N))^(NT)→A
+iPart(A)/100→A
+Disp A

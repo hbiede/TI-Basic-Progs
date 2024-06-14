@@ -1,0 +1,17 @@
+ClrHome
+Disp "AX²+BX+C"
+Prompt A,B,C
+­B/(2A)→H
+(A*H²+BH+C)→K
+ClrHome
+Disp ""
+Disp ""
+Disp ""
+Disp ""
+Output(1,1,"F(X)=A(X-H)²+K")
+Output(2,1,"A=")
+Output(2,3,A)
+Output(3,1,"H=")
+Output(3,3,H)
+Output(4,1,"K=")
+Output(4,3,K)

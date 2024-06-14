@@ -1,0 +1,5 @@
+ClrHome
+Disp "(A,B),(C,D)"
+Prompt A,B,C,D
+√((A-C)²+(B-D)²)
+Disp "D²=",Ans²,"D=",Ans

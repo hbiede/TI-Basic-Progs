@@ -1,0 +1,6 @@
+ClrHome
+Disp "(A,B),(C,D)"
+Prompt A,B,C,D
+{A,C}→L₁
+{B,D}→L₂
+LinReg(ax+b) L₁,L₂

@@ -1,0 +1,12 @@
+ClrHome
+Disp "SIDE A"
+Prompt A
+ClrHome
+Disp "SIDE B"
+Prompt B
+ClrHome
+Disp "ANGLE C"
+Prompt C
+ClrHome
+Disp "SIDE C"
+Disp √(A²+B²-2ABcos(C))

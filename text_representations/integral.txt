@@ -1,0 +1,54 @@
+ClrHome
+DelVar Y₁
+Disp "F(X) IN QUOTES"
+Input "F(X)=",Y₁
+ClrHome
+Disp "LOWER LIMIT"
+Input A
+Disp "UPPER LIMIT"
+Input B
+ClrHome
+Disp "DIVISIONS"
+Input N
+(B-A)/N→H
+A→X
+0→L
+0→M
+1→I
+Lbl P
+L+H*Y₁→L
+X+.5H→X
+M+H*Y₁→M
+X+.5H→X
+IS>(I,N)
+Goto P
+Disp "LEFT/RIGHT"
+Disp L
+L+H*Y₁→R
+A→X
+R-H*Y₁→R
+Disp R
+Pause 
+(L+R)/2→T
+Disp "TRAP/MIDP"
+Disp T
+Disp M
+N/2→N
+(B-A)/N→H
+A→X
+0→L
+0→M
+1→I
+Lbl Q
+L+H*Y₁→L
+X+.5H→X
+M+H*Y₁→M
+X+.5H→X
+IS>(I,N)
+Goto Q
+L+H*Y₁→R
+A→X
+R-H*Y₁→R
+(L+R)/2→T
+Disp "SIMP"
+Disp (2M+T)/3

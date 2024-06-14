@@ -1,0 +1,56 @@
+ClrHome
+Lbl S
+4.3→R
+11.75→W
+2.54→C
+
+Menu("TYPE OF MOVEMENT","STRAIGHT",F,"TURNING",T)
+
+Lbl F
+
+Disp "DISTANCE IN INCHES"
+Prompt L
+LC→L
+round(200(L/(2πR)),0)→N
+
+Disp "Number of Steps"
+Disp round(N,0)
+Pause 
+
+Disp "SECONDS TO"
+Disp "COMPLETE"
+Disp "MINIMUM:"
+Disp abs(N/600)->Frac
+Prompt S
+Disp abs(round(N/S,0))
+Stop
+
+Lbl T
+
+Disp "RADIUS OF TURN"
+Disp "IN INCES"
+Prompt D
+DC→D
+Disp "ANGLE OF TURN"
+Disp "IN DEGREES"
+Prompt θ
+
+round(200(θ/360)(D-W)/R,0)→I
+round(200(θ/360)(D+W)/R,0)→O
+
+Disp "INNER STEPS"
+Disp I
+Disp "OUTER STEPS"
+Disp O
+Pause 
+
+Disp "SECONDS TO"
+Disp "COMPLETE"
+Disp "MAXIMUM:"
+Disp abs(O/600)Frac
+Prompt S
+
+Disp "INNER STEP SPEED"
+Disp round(abs(200(I/O))/S,0)
+Disp "OUTER STEP SPEED"
+Disp round(abs(O/S),0)

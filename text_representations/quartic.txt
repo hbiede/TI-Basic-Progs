@@ -1,0 +1,19 @@
+ClrHome
+a+bi
+Disp "AX^4+BX^3+CX²+DX+E=0"
+Prompt A,B,C,D,E
+(8AC-3B²)/(8A²)→G
+(B^3+8DA²-4ABC)/(8A^3)→H
+C²-3BD+12AE→I
+2C^3-9BCD+27B²E+27AD²-72ACE→J
+^3√((J+√(J²-4I^3))/2)→K
+.5√((­2/3)G+(1/(3A))(K+(I/K)))→L
+(­B/(4A))-L+.5√(­4L²-2G+(H/L))→M
+(­B/(4A))-L-.5√(­4L²-2G+(H/L))→N
+(­B/(4A))+L+.5√(­4L²-2G-(H/L))→O
+(­B/(4A))+L-.5√(­4L²-2G-(H/L))→P
+Disp "X="
+Disp M
+Disp N
+Disp O
+Disp P

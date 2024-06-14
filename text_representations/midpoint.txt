@@ -1,0 +1,6 @@
+ClrHome
+Disp "(X,Y),(A,B)"
+Prompt X,Y,A,B
+((X+A)/2)→F
+((B+Y)/2)→G
+Disp "MIDPOINT(X,Y)",F,G

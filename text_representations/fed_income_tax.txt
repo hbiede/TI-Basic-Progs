@@ -1,0 +1,26 @@
+ClrHome
+Disp "NET INCOME"
+Prompt I
+If I≤50000
+Then
+.15I→T
+End
+If I≤75000 and I>50000
+Then
+.15*50000+.25(I-50000)→T
+End
+If I≤100000 and I>75000
+Then
+.15*50000+.25*25000+.34(I-75000)→T
+End
+If I≤335000 and I>100000
+Then
+.15*50000+.25*25000+.34*25000+.39(I-100000)→T
+End
+If I≥335000
+Then
+.15*50000+.25*25000+.34*50000+.39*235000+.34(I-335000)→T
+End
+ClrHome
+Disp "FED INC TAX"
+Disp round(T,2)

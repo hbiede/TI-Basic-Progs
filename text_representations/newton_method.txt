@@ -1,0 +1,26 @@
+ClrHome
+DelVar Y₁
+Equ->String(Y₁,Str1)
+If not(length(Str1))
+Then
+Disp "TYPE IN QUOTES"
+Input "F(X)=",Y₁
+ClrHome
+End
+Input "X1=",X
+ClrHome
+Disp "ITERATIONS?"
+Prompt T
+Disp "B"
+For(I,2,T)
+ClrHome
+Disp ""
+Output(1,1,"X")
+Output(1,2,I)
+Output(1,3+iPart(log(I)),"=")
+X-(Y₁(X)/nDeriv(Y₁,X,X))→X
+Disp X
+If I+1≤T
+Pause 
+End
+Stop

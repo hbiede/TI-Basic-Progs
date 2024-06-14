@@ -1,0 +1,86 @@
+DelVar Y₁
+ClrHome
+Disp "F(X) IN QUOTES"
+Input "F(X)=",Y₁
+ClrHome
+Disp "LOWER LIMIT"
+Input A
+Disp "UPPER LIMIT"
+Input B
+ClrHome
+Disp "DIVISIONS"
+Input N
+(B-A)/N→H
+0→L
+0→R
+A→Xmin
+B→Xmax
+H→Xscl
+A→I
+0→V
+0→W
+For(I,A,B,H)
+If Y₁(I)>V
+Y₁(I)→V
+If Y₁(I)<W
+Y₁(I)→W
+End
+V+1→Ymax
+W-.5→Ymin
+1→Yscl
+ClrDraw
+DispGraph
+0→J
+A→X
+While J<N
+Y₁+L→L
+Line(X,0,X,Y₁)
+Line(X,Y₁,X+H,Y₁)
+Line(X+H,0,X+H,Y₁)
+X+H→X
+J+1→J
+End
+Pause 
+ClrHome
+Disp "LEFT="
+Disp H*L
+ClrDraw
+Pause 
+DispGraph
+0→J
+A+H→X
+While J<N
+Y₁+R→R
+Line(X-H,0,X-H,Y₁)
+Line(X-H,Y₁,X,Y₁)
+Line(X,0,X,Y₁)
+X+H→X
+J+1→J
+End
+Pause 
+Disp "RIGHT="
+Disp H*R
+Pause 
+ClrDraw
+DispGraph
+0→M
+0→J
+A+H/2→X
+While J<N
+Y₁+M→M
+Line((X-H/2),0,(X-H/2),Y₁)
+Line((X-H/2),Y₁,(X+H/2),Y₁)
+Line((X+H/2),0,(X+H/2),Y₁)
+X+H→X
+J+1→J
+End
+Pause 
+­10→Xmin
+10→Xmax
+1→Xscl
+­10→Ymin
+10→Ymax
+1→Yscl
+Disp "MID="
+Disp H*M
+ZStandard
